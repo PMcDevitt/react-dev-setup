@@ -1,7 +1,7 @@
 import webpack from 'webpack'
 import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-
+const srcDirectory = path.resolve(__dirname, 'src')
 export default {
   devtool: 'cheap-module-eval-source-map', // 'inline-source-map',
   entry: [
@@ -12,12 +12,12 @@ export default {
   ],
   target: 'web',
   output: {
-    path: __dirname + '/src', 
+    path: srcDirectory,
     publicPath: '/',
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'src')
+    contentBase: srcDirectory
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -40,7 +40,7 @@ export default {
       // Properties you define here are available in index.html
       // using htmlWebpackPlugin.options.varName
       trackJSToken: 'e339a39623314ed3b80db90966f224ff'
-    }),
+    })
   ],
   module: {
     loaders: [

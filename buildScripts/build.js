@@ -1,7 +1,7 @@
 import webpack from 'webpack'
 import webpackConfig from '../webpack.config.prod'
 import chalk from 'chalk'
-
+/* eslint-disable no-console */
 process.env.NODE_ENV = 'production'
 
 console.log(chalk.blue('Generating the minified bundle for production.  This will take a moment....'))

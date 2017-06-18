@@ -4,6 +4,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import WebpackMd5Hash from 'webpack-md5-hash'
 
+const distDirectory = path.resolve(__dirname, 'dist')
 const GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify('production')
 }
@@ -18,7 +19,7 @@ export default {
   },
   target: 'web',
   output: {
-    path: __dirname + '/dist',
+    path: distDirectory,
     publicPath: '/',
     filename: '[name].[chunkhash].js'
   },
