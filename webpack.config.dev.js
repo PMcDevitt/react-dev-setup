@@ -7,11 +7,12 @@ export default {
   entry: [
     'eventsource-polyfill', // necessary for hot reloading with IE
     'webpack-hot-middleware/client?reload=true', // note that it reloads the page if hot module reloading fails.
-    path.resolve(__dirname, 'src/index')
+    path.resolve(__dirname, 'src/index'),
+    path.resolve(__dirname, 'src/vendor')
   ],
   target: 'web',
   output: {
-    path: __dirname + '/src', // Note: Physical files are only output by the production build task `npm run build`.
+    path: __dirname + '/src', 
     publicPath: '/',
     filename: 'bundle.js'
   },
@@ -24,11 +25,16 @@ export default {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       minify: {
-        removeComments: false,
+        removeComments: true,
         collapseWhitespace: false,
+        removeRedundantAttributes: true,
         useShortDoctype: true,
         removeEmptyAttributes: true,
         removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true
       },
       inject: true,
       // Properties you define here are available in index.html

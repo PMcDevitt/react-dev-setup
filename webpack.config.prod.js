@@ -14,7 +14,7 @@ export default {
   noInfo: false,
   entry: {
     vendor: path.resolve(__dirname, 'src/vendor'),
-    bundle: path.resolve(__dirname, 'src/index')
+    main: path.resolve(__dirname, 'src/index')
   },
   target: 'web',
   output: {
@@ -32,7 +32,7 @@ export default {
     new WebpackMd5Hash(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin(GLOBALS),
-    new ExtractTextPlugin('[name].[contenthash].css'),
+    new ExtractTextPlugin('styleSheet.[contenthash].css'),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       minify: {
