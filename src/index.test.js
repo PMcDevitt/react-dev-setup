@@ -1,8 +1,8 @@
-// 'use strict'
-// import expect from 'expect'
-//
-// describe('Our first test', () => {
-//   it('should pass', () => {
-//     expect(true).toEqual(true)
-//   })
-// })
+'use strict'
+import assert from 'assert'
+
+describe('Initial test', () => {
+  it('should pass', () => {
+    assert(true)
+  })
+})

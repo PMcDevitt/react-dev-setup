@@ -1,7 +1,8 @@
 'use strict'
 import React from 'react'
+import PropTypes from 'prop-types'
 
-class App extends React.Component {
+class App {
   render () {
     return (
       <div className='container-fluid'>
@@ -12,7 +13,7 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  children: React.PropTypes.object.isRequired
+  children: PropTypes.object.isRequired
 }
 
 export default App

@@ -1,7 +1,7 @@
 'use strict'
 import React from 'react'
 
-class AboutPage extends React.Component {
+class AboutPage {
   render () {
     return (
       <div>
